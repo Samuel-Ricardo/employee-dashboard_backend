@@ -1,0 +1,8 @@
+import { MODULES } from './modules/app.factory';
+
+const APP = MODULES.INFRA.SERVER.HTTP.EXPRESS();
+
+APP.use(MODULES.INFRA.SERVER.HTTP.CORS());
+APP.use(MODULES.INFRA.SERVER.HTTP.PARSER.BODY());
+
+export { APP };
