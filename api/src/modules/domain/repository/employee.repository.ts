@@ -7,6 +7,6 @@ export interface IEmployeeRepository {
   create(DTO: ICreateEmployeeDTO): Promise<void>;
   update(DTO: IUpdateEmployeeDTO): Promise<void>;
   delete(DTO: IDeleteEmployeeDTO): Promise<void>;
-  get(DTO: IGetEmployeeDTO): Promise<Employee>;
-  getAll(): Promise<Employee[]>;
+  find(DTO: IGetEmployeeDTO): Promise<Employee>;
+  findAll(): Promise<Employee[]>;
 }
