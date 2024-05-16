@@ -1,6 +1,6 @@
 import { IEmployeeDTO } from '../../DTO/employee/employee.dto';
 
-export class User {
+export class Employee {
   constructor(
     private _name: string,
     private _role: string,
@@ -18,6 +18,6 @@ export class User {
   }
 
   static fromDTO(DTO: IEmployeeDTO) {
-    return new User(DTO.name, DTO.role, DTO.department, DTO.admission_date);
+    return new Employee(DTO.name, DTO.role, DTO.department, DTO.admission_date);
   }
 }
