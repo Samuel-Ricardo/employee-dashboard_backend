@@ -1,9 +1,15 @@
-import { MODULES } from '@/modules/app.factory';
+import { MODULE } from '../../../../app.registry';
+import { Router } from 'express';
+import { interfaces } from 'inversify';
 
-const APP_ROUTER = MODULES.INFRA.ENGINE.ROUTER.HTTP.EXPRESS();
+export const EXPRESS_APP_ROUTER = ({ container }: interfaces.Context) => {
+  const APP_ROUTER = container.get<Router>(
+    MODULE.INFRA.ENGINE.ROUTER.HTTP.EXPRESS,
+  );
 
-APP_ROUTER.get('/', (req, res) => {
-  res.send('Hello World! :D');
-});
+  APP_ROUTER.get('/', (req, res) => {
+    res.send('Hello World! :D');
+  });
 
-export { APP_ROUTER as EXPRESS_APP_ROUTER };
+  return APP_ROUTER;
+};
