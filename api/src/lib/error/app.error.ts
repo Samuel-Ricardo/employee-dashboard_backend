@@ -1,3 +1,6 @@
+import { IError } from '@/@types/error.type';
+import { IErrorDTO } from '@/modules/domain/DTO/error/app.dto';
+
 export class AppError extends Error implements IError {
   constructor(
     public message: string,
