@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Samuel-Ricardo/employee-dashboard_backend#readme",
   "dependencies": {
+    "express": "^4.19.2",
     "typescript": "^5.4.5"
   }
 }
