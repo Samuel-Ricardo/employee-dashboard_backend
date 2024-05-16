@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/Samuel-Ricardo/employee-dashboard_backend#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "inversify": "^6.0.2",
     "inversify-inject-decorators": "^3.1.0",

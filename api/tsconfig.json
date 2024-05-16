@@ -10,6 +10,9 @@
     "emitDecoratorMetadata": true,
     "rootDir": "./",
     "outDir": "./build",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
   }
 }
