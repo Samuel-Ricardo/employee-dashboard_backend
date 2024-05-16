@@ -1,13 +1,10 @@
 import { logger } from '@/lib/logger.lib';
 import MONGOOSE from 'mongoose';
 
-// URL de conexão com o MongoDB
 const mongoURI: string = 'mongodb://localhost:27017/minha-base-de-dados';
 
-// Conecte-se ao MongoDB
 MONGOOSE.connect(mongoURI);
 
-// Lidere com erros de conexão
 MONGOOSE.connection.once('error', () =>
   logger.error(
     {

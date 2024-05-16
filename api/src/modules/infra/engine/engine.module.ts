@@ -1,6 +1,7 @@
 import { Container } from 'inversify';
 import { ENGINE_REGISTRY } from './engine.registry';
 import { EXPRESS_ROUTER } from './router/http/express.router';
+import { MONGOOSE } from './database/mongodb/mongoose.engine';
 
 export const ENGINE_MODULE = new Container({
   autoBindInjectable: true,
@@ -9,4 +10,8 @@ export const ENGINE_MODULE = new Container({
 
 ENGINE_MODULE.bind(ENGINE_REGISTRY.ROUTER.HTTP.EXPRESS).toConstantValue(
   EXPRESS_ROUTER,
+);
+
+ENGINE_MODULE.bind(ENGINE_REGISTRY.DATABASE.MONGODB.MONGOOSE).toConstantValue(
+  MONGOOSE,
 );
