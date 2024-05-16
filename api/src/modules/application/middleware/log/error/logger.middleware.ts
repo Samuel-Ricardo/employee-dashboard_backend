@@ -1,4 +1,4 @@
-import { logger } from '@/lib/logger.lib';
+import { logger } from '../../../../../lib/logger.lib';
 import { ErrorRequestHandler } from 'express';
 
 export const ERROR_LOGGER_MIDDLEWARE: ErrorRequestHandler = (

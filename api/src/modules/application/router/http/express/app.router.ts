@@ -1,4 +1,4 @@
-import { TRY } from '@/util/try.util';
+import { TRY } from '../../../../../util/try.util';
 import { MODULE } from '../../../../app.registry';
 import { Router } from 'express';
 import { interfaces } from 'inversify';
