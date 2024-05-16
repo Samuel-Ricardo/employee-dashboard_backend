@@ -1,3 +1,4 @@
+import { ICreateEmployeeDTO } from '../DTO/employee/create.dto';
 import { Employee } from '../entity/employee/employee.entity';
 
 export interface IEmployeeRepository {
