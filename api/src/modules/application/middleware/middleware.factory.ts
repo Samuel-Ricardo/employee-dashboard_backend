@@ -1,22 +1,16 @@
-import { Container } from 'inversify';
+import { ErrorRequestHandler, RequestHandler } from 'express';
+import { MIDDLEWARE_MODULE } from './middleware.module';
 import { MIDDLEWARE_REGISTRY } from './middleware.registry';
-import { ERROR_MIDDLEWARE } from './error/error.middleware';
-import { LOGGER_MIDDLEWARE } from './log/logger.middleware';
-import { ERROR_LOGGER_MIDDLEWARE } from './log/error/logger.middleware';
 
-export const MIDDLEWARE_MODULE = new Container({
-  autoBindInjectable: true,
-  defaultScope: 'Singleton',
-});
-
-MIDDLEWARE_MODULE.bind(MIDDLEWARE_REGISTRY.ERROR).toConstantValue(
-  ERROR_MIDDLEWARE,
-);
-
-MIDDLEWARE_MODULE.bind(MIDDLEWARE_REGISTRY.LOGGER.APP).toConstantValue(
-  LOGGER_MIDDLEWARE,
-);
-
-MIDDLEWARE_MODULE.bind(MIDDLEWARE_REGISTRY.LOGGER.ERROR).toConstantValue(
-  ERROR_LOGGER_MIDDLEWARE,
-);
+export const MIDDLEWARE_FACTORY = {
+  ERROR: () =>
+    MIDDLEWARE_MODULE.get<ErrorRequestHandler>(MIDDLEWARE_REGISTRY.ERROR),
+  LOGGER: {
+    APP: () =>
+      MIDDLEWARE_MODULE.get<RequestHandler>(MIDDLEWARE_REGISTRY.LOGGER.APP),
+    ERROR: () =>
+      MIDDLEWARE_MODULE.get<ErrorRequestHandler>(
+        MIDDLEWARE_REGISTRY.LOGGER.ERROR,
+      ),
+  },
+};
