@@ -1,4 +1,4 @@
-export interface IUserDTO {
+export interface IEmployeeDTO {
   name: string;
   role: string;
   department: string;
