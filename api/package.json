@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Samuel-Ricardo/employee-dashboard_backend/issues"
   },
-  "homepage": "https://github.com/Samuel-Ricardo/employee-dashboard_backend#readme"
+  "homepage": "https://github.com/Samuel-Ricardo/employee-dashboard_backend#readme",
+  "dependencies": {
+    "typescript": "^5.4.5"
+  }
 }
