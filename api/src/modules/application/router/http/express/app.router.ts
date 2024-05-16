@@ -6,4 +6,4 @@ APP_ROUTER.get('/', (req, res) => {
   res.send('Hello World! :D');
 });
 
-export { APP_ROUTER };
+export { APP_ROUTER as EXPRESS_APP_ROUTER };
