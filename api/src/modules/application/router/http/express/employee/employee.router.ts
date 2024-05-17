@@ -1,6 +1,6 @@
-import { MODULE } from '@/modules/app.registry';
-import { EmployeeController } from '@/modules/application/controller/employee/employee.controller';
-import { TRY } from '@/util/try.util';
+import { MODULE } from '../../../../../app.registry';
+import { EmployeeController } from '../../../../../application/controller/employee/employee.controller';
+import { TRY } from '../../../../../../util/try.util';
 import { Router } from 'express';
 import { interfaces } from 'inversify';
 

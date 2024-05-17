@@ -1,12 +1,16 @@
-import { ICreateEmployeeDTO } from '@/modules/domain/DTO/employee/create.dto';
-import { IFindOneEmployeeDTO } from '@/modules/domain/DTO/employee/find/one.dto';
-import { IUpdateEmployeeDTO } from '@/modules/domain/DTO/employee/update.dto';
-import { IEmployeeService } from '@/modules/domain/service/employee.service';
-import { injectable } from 'inversify';
+import { MODULE } from '../../../app.registry';
+import { ICreateEmployeeDTO } from '../../../domain/DTO/employee/create.dto';
+import { IFindOneEmployeeDTO } from '../../../domain/DTO/employee/find/one.dto';
+import { IUpdateEmployeeDTO } from '../../../domain/DTO/employee/update.dto';
+import { IEmployeeService } from '../../../domain/service/employee.service';
+import { inject, injectable } from 'inversify';
 
 @injectable()
 export class EmployeeController {
-  constructor(private readonly _service: IEmployeeService) {}
+  constructor(
+    @inject(MODULE.APPLICATION.SERVICE.EMPLOYEE)
+    private readonly _service: IEmployeeService,
+  ) {}
 
   async create(DTO: ICreateEmployeeDTO) {
     const result = await this._service.create(DTO);

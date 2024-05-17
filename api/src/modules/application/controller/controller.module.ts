@@ -10,4 +10,4 @@ const _MODULE = new Container({
 
 export const CONTROLLER_MODULE = Container.merge(_MODULE, SERVICE_MODULE);
 
-SERVICE_MODULE.bind(CONTROLLER_REGISTRY.EMPLOYEE).to(EmployeeController);
+CONTROLLER_MODULE.bind(CONTROLLER_REGISTRY.EMPLOYEE).to(EmployeeController);
