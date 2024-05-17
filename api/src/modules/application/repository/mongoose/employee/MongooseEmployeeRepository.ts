@@ -26,8 +26,8 @@ export class MongooseEmployeeRepository implements IEmployeeRepository {
     await EmployeeModel.findByIdAndUpdate(DTO.id, DTO, { new: true });
   }
 
-  delete(DTO: IDeleteEmployeeDTO): Promise<void> {
-    throw new Error('Method not implemented.');
+  async delete({ id }: IDeleteEmployeeDTO) {
+    await EmployeeModel.findByIdAndDelete(id);
   }
   findOne(DTO: IFindOneEmployeeDTO): Promise<Employee> {
     throw new Error('Method not implemented.');
