@@ -13,25 +13,25 @@ export const EXPRESS_EMPLOYEE_ROUTER = ({ container }: interfaces.Context) => {
     MODULE.APPLICATION.CONTROLLER.EMPLOYEE,
   );
 
-  APP_ROUTER.get('/employee/', (req, res, next) =>
+  APP_ROUTER.get('/api/employees/', (req, res, next) =>
     TRY(async () => res.status(200).send(await EMPLOYEE.findAll()), next),
   );
 
-  APP_ROUTER.get('/employee/:id', (req, res, next) =>
+  APP_ROUTER.get('/api/employees/:id', (req, res, next) =>
     TRY(
       async () => res.status(200).send(await EMPLOYEE.findOne(req.params)),
       next,
     ),
   );
 
-  APP_ROUTER.post('/employee/', (req, res, next) =>
+  APP_ROUTER.post('/api/employees/', (req, res, next) =>
     TRY(
       async () => res.status(201).send(await EMPLOYEE.create(req.body)),
       next,
     ),
   );
 
-  APP_ROUTER.put('/employee/:id', (req, res, next) =>
+  APP_ROUTER.put('/api/employees/:id', (req, res, next) =>
     TRY(
       async () =>
         res
@@ -41,7 +41,7 @@ export const EXPRESS_EMPLOYEE_ROUTER = ({ container }: interfaces.Context) => {
     ),
   );
 
-  APP_ROUTER.delete('/employee/:id', (req, res, next) =>
+  APP_ROUTER.delete('/api/employees/:id', (req, res, next) =>
     TRY(
       async () => res.status(204).send(await EMPLOYEE.delete(req.params)),
       next,
