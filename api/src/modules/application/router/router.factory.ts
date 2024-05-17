@@ -6,6 +6,8 @@ export const ROUTER_FACTORY = {
   HTTP: {
     EXPRESS: {
       APP: () => ROUTER_MODULE.get<Router>(ROUTER_REGISTRY.HTTP.EXPRESS.APP),
+      EMPLOYEE: () =>
+        ROUTER_MODULE.get<Router>(ROUTER_REGISTRY.HTTP.EXPRESS.EMPLOYEE),
     },
   },
 };
