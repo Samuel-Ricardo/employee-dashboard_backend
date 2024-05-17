@@ -2,7 +2,6 @@ import { MODULES } from '@/modules/app.factory';
 import { EmployeeModel } from '@/modules/application/model/mongoose/emplyee.model';
 import { ICreateEmployeeDTO } from '@/modules/domain/DTO/employee/create.dto';
 import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
-import { IEmployeeDTO } from '@/modules/domain/DTO/employee/employee.dto';
 import { IFindOneEmployeeDTO } from '@/modules/domain/DTO/employee/find/one.dto';
 import { IUpdateEmployeeDTO } from '@/modules/domain/DTO/employee/update.dto';
 import { Employee } from '@/modules/domain/entity/employee/employee.entity';
