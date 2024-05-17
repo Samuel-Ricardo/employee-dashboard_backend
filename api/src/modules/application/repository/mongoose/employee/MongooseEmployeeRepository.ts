@@ -16,7 +16,10 @@ export class MongooseEmployeeRepository implements IEmployeeRepository {
 
   async create(DTO: ICreateEmployeeDTO) {
     const employee = new EmployeeModel(DTO);
-    await employee.save();
+    const { _id } = await employee.save();
+    return {
+      id: _id.toString(),
+    };
   }
   update(DTO: IUpdateEmployeeDTO): Promise<void> {
     throw new Error('Method not implemented.');
