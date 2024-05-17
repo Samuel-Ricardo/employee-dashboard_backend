@@ -4,7 +4,7 @@ import { TRY } from '@/util/try.util';
 import { Router } from 'express';
 import { interfaces } from 'inversify';
 
-export const EXPRESS_USER_ROUTER = ({ container }: interfaces.Context) => {
+export const EXPRESS_EMPLOYEE_ROUTER = ({ container }: interfaces.Context) => {
   const APP_ROUTER = container.get<Router>(
     MODULE.INFRA.ENGINE.ROUTER.HTTP.EXPRESS,
   );
