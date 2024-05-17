@@ -25,4 +25,9 @@ export class EmployeeController {
     const result = await this._service.findOne(DTO);
     return { result: result.toDTO() };
   }
+
+  async findAll() {
+    const result = await this._service.findAll();
+    return { result: result.map((employee) => employee.toDTO()) };
+  }
 }
