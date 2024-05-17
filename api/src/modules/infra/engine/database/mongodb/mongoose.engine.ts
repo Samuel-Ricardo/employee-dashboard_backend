@@ -1,7 +1,8 @@
+import { ENV } from '../../../config/env/env.config';
 import { logger } from '../../../../../lib/logger.lib';
 import MONGOOSE from 'mongoose';
 
-const mongoURI: string = 'mongodb://root:root@mongo:27017';
+const mongoURI = ENV.DATABASE.URL || '';
 
 MONGOOSE.connect(mongoURI);
 
