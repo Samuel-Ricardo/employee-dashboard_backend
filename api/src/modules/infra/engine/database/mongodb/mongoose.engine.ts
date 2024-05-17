@@ -1,4 +1,4 @@
-import { logger } from '@/lib/logger.lib';
+import { logger } from '../../../../../lib/logger.lib';
 import MONGOOSE from 'mongoose';
 
 const mongoURI: string = 'mongodb://localhost:27017/minha-base-de-dados';

@@ -1,15 +1,15 @@
 import { inject, injectable } from 'inversify';
 import { CreateEmployeeUseCase } from '../../use_case/employee/create.use_case';
-import { MODULE } from '@/modules/app.registry';
+import { MODULE } from '../../../app.registry';
 import { UpdateEmployeeUseCase } from '../../use_case/employee/update.use_case';
 import { DeleteEmployeeUseCase } from '../../use_case/employee/delete.use_case';
 import { FindOneEmployeeUseCase } from '../../use_case/employee/find/one.use_case';
 import { FindAllEmployeeUseCase } from '../../use_case/employee/find/all.use_case';
-import { IEmployeeService } from '@/modules/domain/service/employee.service';
-import { ICreateEmployeeDTO } from '@/modules/domain/DTO/employee/create.dto';
-import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
-import { IFindOneEmployeeDTO } from '@/modules/domain/DTO/employee/find/one.dto';
-import { IUpdateEmployeeDTO } from '@/modules/domain/DTO/employee/update.dto';
+import { IEmployeeService } from '../../../domain/service/employee.service';
+import { ICreateEmployeeDTO } from '../../../domain/DTO/employee/create.dto';
+import { IDeleteEmployeeDTO } from '../../../domain/DTO/employee/delete,dto';
+import { IFindOneEmployeeDTO } from '../../../domain/DTO/employee/find/one.dto';
+import { IUpdateEmployeeDTO } from '../../../domain/DTO/employee/update.dto';
 
 @injectable()
 export class EmployeeService implements IEmployeeService {
