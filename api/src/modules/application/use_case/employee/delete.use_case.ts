@@ -1,6 +1,6 @@
 import { injectable } from 'inversify';
 import { MongooseEmployeeRpositorySupport } from '../../support/repository/mongoose/employee.support';
-import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
+import { IDeleteEmployeeDTO } from '../../../domain/DTO/employee/delete,dto';
 
 @injectable()
 export class DeleteEmployeeUseCase extends MongooseEmployeeRpositorySupport {

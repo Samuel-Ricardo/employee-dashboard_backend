@@ -1,4 +1,4 @@
-import { MongooseEmployeeRpositorySupport } from '@/modules/application/support/repository/mongoose/employee.support';
+import { MongooseEmployeeRpositorySupport } from '../../../../application/support/repository/mongoose/employee.support';
 import { injectable } from 'inversify';
 
 @injectable()
