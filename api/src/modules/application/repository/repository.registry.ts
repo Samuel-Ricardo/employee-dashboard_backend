@@ -1,0 +1,5 @@
+export const REPOSITORY_REGISTRY = {
+  MONGOOSE: {
+    EMPLOYEE: Symbol.for('MODULE::REPOSITORY::MONGOOSE::EMPLOYEE'),
+  },
+};
