@@ -2,6 +2,7 @@ import { MODULES } from '@/modules/app.factory';
 import { EmployeeModel } from '@/modules/application/model/mongoose/emplyee.model';
 import { ICreateEmployeeDTO } from '@/modules/domain/DTO/employee/create.dto';
 import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
+import { IEmployeeDTO } from '@/modules/domain/DTO/employee/employee.dto';
 import { IFindOneEmployeeDTO } from '@/modules/domain/DTO/employee/find/one.dto';
 import { IUpdateEmployeeDTO } from '@/modules/domain/DTO/employee/update.dto';
 import { Employee } from '@/modules/domain/entity/employee/employee.entity';
@@ -29,8 +30,17 @@ export class MongooseEmployeeRepository implements IEmployeeRepository {
   async delete({ id }: IDeleteEmployeeDTO) {
     await EmployeeModel.findByIdAndDelete(id);
   }
-  findOne(DTO: IFindOneEmployeeDTO): Promise<Employee> {
-    throw new Error('Method not implemented.');
+  async findOne({ id }: IFindOneEmployeeDTO) {
+    const result = await EmployeeModel.findById(id);
+    if (!result) throw new Error('Employee not found');
+
+    return Employee.fromDTO({
+      id: result._id.toString(),
+      name: result.name,
+      role: result.role,
+      department: result.department,
+      admission_date: result.admission_date,
+    });
   }
   findAll(): Promise<Employee[]> {
     throw new Error('Method not implemented.');
