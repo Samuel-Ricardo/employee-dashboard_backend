@@ -1,4 +1,5 @@
 import { MODULES } from '@/modules/app.factory';
+import { EmployeeModel } from '@/modules/application/model/mongoose/emplyee.model';
 import { ICreateEmployeeDTO } from '@/modules/domain/DTO/employee/create.dto';
 import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
 import { IFindOneEmployeeDTO } from '@/modules/domain/DTO/employee/find/one.dto';
@@ -14,7 +15,8 @@ export class MongooseEmployeeRepository implements IEmployeeRepository {
   }
 
   async create(DTO: ICreateEmployeeDTO) {
-    throw new Error('Method not implemented.');
+    const employee = new EmployeeModel(DTO);
+    await employee.save();
   }
   update(DTO: IUpdateEmployeeDTO): Promise<void> {
     throw new Error('Method not implemented.');
