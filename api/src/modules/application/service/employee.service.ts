@@ -42,7 +42,7 @@ export class EmployeeService implements IEmployeeService {
   async findOne(DTO: IFindOneEmployeeDTO) {
     return this._findOne.execute(DTO);
   }
-  findAll(): Promise<Employee[]> {
-    throw new Error('Method not implemented.');
+  async findAll() {
+    return this._findAll.execute();
   }
 }
