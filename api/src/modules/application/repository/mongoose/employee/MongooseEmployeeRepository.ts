@@ -1,11 +1,11 @@
-import { MODULES } from '@/modules/app.factory';
-import { EmployeeModel } from '@/modules/application/model/mongoose/emplyee.model';
-import { ICreateEmployeeDTO } from '@/modules/domain/DTO/employee/create.dto';
-import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
-import { IFindOneEmployeeDTO } from '@/modules/domain/DTO/employee/find/one.dto';
-import { IUpdateEmployeeDTO } from '@/modules/domain/DTO/employee/update.dto';
-import { Employee } from '@/modules/domain/entity/employee/employee.entity';
-import { IEmployeeRepository } from '@/modules/domain/repository/employee.repository';
+import { MODULES } from '../../../../app.factory';
+import { EmployeeModel } from '../../../model/mongoose/emplyee.model';
+import { ICreateEmployeeDTO } from '../../../../domain/DTO/employee/create.dto';
+import { IDeleteEmployeeDTO } from '../../../../domain/DTO/employee/delete,dto';
+import { IFindOneEmployeeDTO } from '../../../../domain/DTO/employee/find/one.dto';
+import { IUpdateEmployeeDTO } from '../../../../domain/DTO/employee/update.dto';
+import { Employee } from '../../../../domain/entity/employee/employee.entity';
+import { IEmployeeRepository } from '../../../../domain/repository/employee.repository';
 import { injectable } from 'inversify';
 
 @injectable()
