@@ -42,7 +42,17 @@ export class MongooseEmployeeRepository implements IEmployeeRepository {
       admission_date: result.admission_date,
     });
   }
-  findAll(): Promise<Employee[]> {
-    throw new Error('Method not implemented.');
+
+  async findAll() {
+    const result = await EmployeeModel.find();
+    return result.map((employee) =>
+      Employee.fromDTO({
+        id: employee._id.toString(),
+        name: employee.name,
+        role: employee.role,
+        department: employee.department,
+        admission_date: employee.admission_date,
+      }),
+    );
   }
 }
