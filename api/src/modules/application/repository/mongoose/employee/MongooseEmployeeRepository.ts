@@ -21,9 +21,11 @@ export class MongooseEmployeeRepository implements IEmployeeRepository {
       id: _id.toString(),
     };
   }
-  update(DTO: IUpdateEmployeeDTO): Promise<void> {
-    throw new Error('Method not implemented.');
+
+  async update(DTO: IUpdateEmployeeDTO) {
+    await EmployeeModel.findByIdAndUpdate(DTO.id, DTO, { new: true });
   }
+
   delete(DTO: IDeleteEmployeeDTO): Promise<void> {
     throw new Error('Method not implemented.');
   }
