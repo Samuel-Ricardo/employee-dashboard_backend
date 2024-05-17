@@ -36,11 +36,11 @@ export class EmployeeService implements IEmployeeService {
     return this._update.execute(DTO);
   }
 
-  delete(DTO: IDeleteEmployeeDTO): Promise<void> {
-    throw new Error('Method not implemented.');
+  async delete(DTO: IDeleteEmployeeDTO) {
+    return this._delete.execute(DTO);
   }
-  findOne(DTO: IFindOneEmployeeDTO): Promise<Employee> {
-    throw new Error('Method not implemented.');
+  async findOne(DTO: IFindOneEmployeeDTO) {
+    return this._findOne.execute(DTO);
   }
   findAll(): Promise<Employee[]> {
     throw new Error('Method not implemented.');
