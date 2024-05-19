@@ -1,5 +1,5 @@
-import { MODULE } from '@/modules/app.registry';
-import { IDocumentationModule } from '@/modules/infra/documentation/docs.interface';
+import { MODULE } from '../../../../app.registry';
+import { IDocumentationModule } from '../../../../infra/documentation/docs.interface';
 import { RequestHandler, Router } from 'express';
 import { interfaces } from 'inversify';
 
