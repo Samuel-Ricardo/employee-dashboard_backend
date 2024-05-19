@@ -1,4 +1,4 @@
-import { catchZod } from '@/util/validation/zod/catch.util';
+import { catchZod } from '../../../../../util/validation/zod/catch.util';
 import { z } from 'zod';
 
 export const EmployeeSchema = z
