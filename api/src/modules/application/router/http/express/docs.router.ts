@@ -10,7 +10,7 @@ export const EXPRESS_DOCS_ROUTER = ({ container }: interfaces.Context) => {
     IDocumentationModule<RequestHandler, RequestHandler>
   >(MODULE.INFRA.DOCS.SWAGGER);
 
-  ROUTER.use('/api_docs', DOCS.server(), DOCS.setup());
+  ROUTER.use('/api/docs', DOCS.server(), DOCS.setup());
 
   return ROUTER;
 };
