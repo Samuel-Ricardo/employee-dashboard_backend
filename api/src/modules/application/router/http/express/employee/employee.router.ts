@@ -4,9 +4,9 @@ import { Router } from 'express';
 import { interfaces } from 'inversify';
 import { ZOD_VALIDATION_MIDDLEWARE_TYPE } from '../../../../../../@types/module/application/middleware/validation/zod.type';
 import { FindOneEmployeeSchema } from '../../../../validation/zod/employee/find/one.validation';
-import { CreateEmployeeSchema } from '@/modules/application/validation/zod/employee/create.validation';
-import { UpdateEmployeeSchema } from '@/modules/application/validation/zod/employee/update.validation';
-import { DeleteEmployeeSchema } from '@/modules/application/validation/zod/employee/delete.validation';
+import { CreateEmployeeSchema } from '../../../../validation/zod/employee/create.validation';
+import { UpdateEmployeeSchema } from '../../../../validation/zod/employee/update.validation';
+import { DeleteEmployeeSchema } from '../../../../validation/zod/employee/delete.validation';
 
 export const EXPRESS_EMPLOYEE_ROUTER = ({ container }: interfaces.Context) => {
   const VALIDATION_MIDDLEWARE = container.get<ZOD_VALIDATION_MIDDLEWARE_TYPE>(
