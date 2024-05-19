@@ -4,6 +4,8 @@ import { EXPRESS_APP_ROUTER } from './http/express/app.router';
 import { ENGINE_MODULE } from '../../infra/engine/engine.module';
 import { EXPRESS_EMPLOYEE_ROUTER } from './http/express/employee/employee.router';
 import { CONTROLLER_MODULE } from '../controller/controller.module';
+import { EXPRESS_DOCS_ROUTER } from './http/express/docs.router';
+import { DOCS_MODULE } from '../../infra/documentation/docs.module';
 
 const _MODULE = new Container({
   autoBindInjectable: true,
@@ -14,6 +16,7 @@ export const ROUTER_MODULE = Container.merge(
   _MODULE,
   ENGINE_MODULE,
   CONTROLLER_MODULE,
+  DOCS_MODULE,
 );
 
 ROUTER_MODULE.bind(ROUTER_REGISTRY.HTTP.EXPRESS.APP)
@@ -22,4 +25,8 @@ ROUTER_MODULE.bind(ROUTER_REGISTRY.HTTP.EXPRESS.APP)
 
 ROUTER_MODULE.bind(ROUTER_REGISTRY.HTTP.EXPRESS.EMPLOYEE)
   .toDynamicValue(EXPRESS_EMPLOYEE_ROUTER)
+  .inSingletonScope();
+
+ROUTER_MODULE.bind(ROUTER_REGISTRY.HTTP.EXPRESS.DOCS)
+  .toDynamicValue(EXPRESS_DOCS_ROUTER)
   .inSingletonScope();
