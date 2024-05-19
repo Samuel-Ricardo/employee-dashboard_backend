@@ -3,6 +3,6 @@ import { z } from 'zod';
 
 export const FindOneEmployeeSchema = z
   .object({
-    id: z.string().min(1).catch(catchZod),
+    id: z.string().trim().min(1, "id can't be empty").catch(catchZod),
   })
   .catch(catchZod);

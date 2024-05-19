@@ -1,8 +1,8 @@
 import { catchZod } from '../../../../../util/validation/zod/catch.util';
 import { z } from 'zod';
 
-export const FindOneEmployeeSchema = z
+export const DeleteEmployeeSchema = z
   .object({
-    id: z.string().min(1).catch(catchZod),
+    id: z.string().trim().min(1).catch(catchZod),
   })
   .catch(catchZod);
