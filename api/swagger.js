@@ -1,11 +1,15 @@
 const swaggerAutogen = require('swagger-autogen')();
+require('dotenv').config();
 
 const doc = {
   info: {
     title: 'Employee Dashboard API',
     description: 'Employee Dashboard API Information',
   },
-  host: 'localhost:3000',
+  host: process.env.HOST || 'localhost:3000',
+  schemes: ['http', 'https'],
+  consumes: ['application/json'],
+  produces: ['application/json'],
 };
 
 const outputFile = './docs/swagger.json';

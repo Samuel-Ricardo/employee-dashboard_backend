@@ -5,10 +5,17 @@
     "description": "Employee Dashboard API Information",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "employee-dashboard-backend-main.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
   ],
   "paths": {
     "/api/employees/": {
