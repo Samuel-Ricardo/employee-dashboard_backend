@@ -10,7 +10,7 @@ export const UpdateEmployeeSchema = z
     admission_date: z
       .date()
       .optional()
-      .or(z.string().date('invalid date').optional())
+      .or(z.string().trim().min(6, 'invalid date').optional())
       .catch(catchZod),
   })
   .catch(catchZod);

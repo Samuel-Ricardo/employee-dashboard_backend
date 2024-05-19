@@ -9,7 +9,7 @@ export const EmployeeSchema = z
     department: z.string().trim().min(3).catch(catchZod),
     admission_date: z
       .date()
-      .or(z.string().date('invalid date'))
+      .or(z.string().trim().min(6, 'invalid date'))
       .catch(catchZod),
   })
   .catch(catchZod);
