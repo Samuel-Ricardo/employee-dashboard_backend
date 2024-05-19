@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import { NoDataProvidedError } from '@/lib/error/validation/no_data.error';
 import { logger } from '@/lib/logger.lib';
 
-export const validate =
+export const ZOD_VALIDATION_MIDDLEWARE =
   (schema: z.ZodSchema) =>
   (req: Request, res: Response, next: NextFunction) => {
     try {
