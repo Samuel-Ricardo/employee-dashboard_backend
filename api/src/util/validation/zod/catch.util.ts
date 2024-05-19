@@ -1,5 +1,5 @@
-import { logger } from '@/lib/logger.lib';
-import { InvalidDataError } from '@/lib/error/validation/data.error';
+import { logger } from '../../../lib/logger.lib';
+import { InvalidDataError } from '../../../lib/error/validation/data.error';
 import { z } from 'zod';
 
 export const catchZod = (zod: {

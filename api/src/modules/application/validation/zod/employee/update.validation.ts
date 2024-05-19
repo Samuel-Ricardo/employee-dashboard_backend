@@ -3,10 +3,10 @@ import { z } from 'zod';
 
 export const UpdateEmployeeSchema = z
   .object({
-    id: z.string().catch(catchZod),
-    name: z.string().optional().catch(catchZod),
-    role: z.string().optional().catch(catchZod),
-    department: z.string().optional().catch(catchZod),
+    id: z.string().min(1).catch(catchZod),
+    name: z.string().min(1).optional().catch(catchZod),
+    role: z.string().min(1).optional().catch(catchZod),
+    department: z.string().min(1).optional().catch(catchZod),
     admission_date: z
       .date()
       .optional()
