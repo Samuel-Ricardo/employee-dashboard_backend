@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
+    "docs::swagger": "node ./swagger.js",
     "build": "tsc --build",
     "start": "node ./build/src/server.js",
     "start:dev": "ts-node src/server.ts",
