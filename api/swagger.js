@@ -9,6 +9,11 @@ const doc = {
 };
 
 const outputFile = './docs/swagger.json';
-const routes = ['./src/app.ts'];
+const routes = [
+  './src/server.ts',
+  './src/modules/application/router/http/express/employee/employee.router.ts',
+  './src/modules/application/router/http/express/app.router.ts',
+  './src/modules/application/router/http/express/docs.router.ts',
+];
 
 swaggerAutogen(outputFile, routes, doc);
