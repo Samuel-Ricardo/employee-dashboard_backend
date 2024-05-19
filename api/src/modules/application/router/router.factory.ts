@@ -8,6 +8,7 @@ export const ROUTER_FACTORY = {
       APP: () => ROUTER_MODULE.get<Router>(ROUTER_REGISTRY.HTTP.EXPRESS.APP),
       EMPLOYEE: () =>
         ROUTER_MODULE.get<Router>(ROUTER_REGISTRY.HTTP.EXPRESS.EMPLOYEE),
+      DOCS: () => ROUTER_MODULE.get<Router>(ROUTER_REGISTRY.HTTP.EXPRESS.DOCS),
     },
   },
 };
