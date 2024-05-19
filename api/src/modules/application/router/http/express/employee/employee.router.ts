@@ -1,6 +1,5 @@
 import { MODULE } from '../../../../../app.registry';
 import { EmployeeController } from '../../../../../application/controller/employee/employee.controller';
-import { TRY } from '../../../../../../util/try.util';
 import { Router } from 'express';
 import { interfaces } from 'inversify';
 import { ZOD_VALIDATION_MIDDLEWARE_TYPE } from '../../../../../../@types/module/application/middleware/validation/zod.type';
