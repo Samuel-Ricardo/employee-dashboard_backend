@@ -6,6 +6,7 @@ import { EXPRESS_EMPLOYEE_ROUTER } from './http/express/employee/employee.router
 import { CONTROLLER_MODULE } from '../controller/controller.module';
 import { EXPRESS_DOCS_ROUTER } from './http/express/docs.router';
 import { DOCS_MODULE } from '../../infra/documentation/docs.module';
+import { MIDDLEWARE_MODULE } from '../middleware/middleware.module';
 
 const _MODULE = new Container({
   autoBindInjectable: true,
@@ -17,6 +18,7 @@ export const ROUTER_MODULE = Container.merge(
   ENGINE_MODULE,
   CONTROLLER_MODULE,
   DOCS_MODULE,
+  MIDDLEWARE_MODULE,
 );
 
 ROUTER_MODULE.bind(ROUTER_REGISTRY.HTTP.EXPRESS.APP)

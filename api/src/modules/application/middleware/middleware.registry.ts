@@ -1,4 +1,7 @@
 export const MIDDLEWARE_REGISTRY = {
+  VALIDATION: {
+    ZOD: Symbol.for('MODULE::APP::MIDDLEWARE::VALIDATION::ZOD'),
+  },
   ERROR: Symbol.for('MODULE::APP::MIDDLEWARE::ERROR'),
   LOGGER: {
     APP: Symbol.for('MODULE::APP::MIDDLEWARE::LOGGER::APP'),

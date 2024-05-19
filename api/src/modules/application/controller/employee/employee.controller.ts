@@ -1,3 +1,4 @@
+import { IDeleteEmployeeDTO } from '@/modules/domain/DTO/employee/delete,dto';
 import { MODULE } from '../../../app.registry';
 import { ICreateEmployeeDTO } from '../../../domain/DTO/employee/create.dto';
 import { IFindOneEmployeeDTO } from '../../../domain/DTO/employee/find/one.dto';
@@ -21,7 +22,7 @@ export class EmployeeController {
     await this._service.update(DTO);
   }
 
-  async delete(DTO: IUpdateEmployeeDTO) {
+  async delete(DTO: IDeleteEmployeeDTO) {
     await this._service.delete(DTO);
   }
 
