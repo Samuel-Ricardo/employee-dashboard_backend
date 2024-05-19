@@ -1,13 +1,26 @@
+import { EmployeeSchema } from '../../../application/validation/zod/employee/employee.validation';
 import { IEmployeeDTO } from '../../DTO/employee/employee.dto';
 
 export class Employee {
+  static validate(DTO: IEmployeeDTO) {
+    return EmployeeSchema.safeParse(DTO);
+  }
+
   constructor(
     private _id: string,
     private _name: string,
     private _role: string,
     private _department: string,
     private _admission_date: Date,
-  ) {}
+  ) {
+    Employee.validate({
+      id: _id,
+      name: _name,
+      role: _role,
+      department: _department,
+      admission_date: _admission_date,
+    });
+  }
 
   toDTO(): IEmployeeDTO {
     return {

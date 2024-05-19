@@ -3,6 +3,7 @@ export const ROUTER_REGISTRY = {
     EXPRESS: {
       APP: Symbol.for('MODULE::ROUTER::HTTP::EXPRESS::APP'),
       EMPLOYEE: Symbol.for('MODULE::ROUTER::HTTP::EXPRESS::EMPLOYEE'),
+      DOCS: Symbol.for('MODULE::ROUTER::HTTP::EXPRESS::DOCS'),
     },
   },
 };
